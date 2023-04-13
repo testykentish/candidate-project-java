@@ -49,7 +49,7 @@ public class EmployeeServiceTest {
     public void testGetTopLevel() {
         List<Employee> topLevelEmployees = Arrays.asList(newEmployee(2L), newEmployee(3L), newEmployee(4L));
 
-        when(employeeRepository.findAllBySupervisorIdIsNotNull()).thenReturn(topLevelEmployees);
+        when(employeeRepository.findAllBySupervisorIdIsNull()).thenReturn(topLevelEmployees);
 
         List<EmployeeDto> employees = employeeService.getTopLevel();
 

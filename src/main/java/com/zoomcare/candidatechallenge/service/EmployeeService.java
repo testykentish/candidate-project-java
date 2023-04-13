@@ -17,7 +17,7 @@ public class EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     public List<EmployeeDto> getTopLevel() {
-        List<Employee> employees = employeeRepository.findAllBySupervisorIdIsNotNull();
+        List<Employee> employees = employeeRepository.findAllBySupervisorIdIsNull();
         return employees.stream().map(DtoUtils::toEmployeeDto).collect(Collectors.toList());
     }
 
